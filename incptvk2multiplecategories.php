@@ -74,6 +74,15 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 	    {
 		if(strpos($query, 'AND c.id'))
 		{
+		    $isCount = strpos($query, 'COUNT');
+		    if($isCount != 0)
+		    {
+			$query = str_replace('*', 'DISTINCT i.id', $query);
+		    }
+		    else
+		    {
+			$query = str_replace('i.*', 'DISTINCT i.*', $query);
+		    }
 		    $pos = strpos($query, 'WHERE');
 		    $first = substr($query, 0 , $pos);
 		    $second = substr($query, $pos);
@@ -89,6 +98,15 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 	    {
 		if(strpos($query, 'AND i.catid'))
 		{
+		    $isCount = strpos($query, 'COUNT');
+		    if($isCount != 0)
+		    {
+			$query = str_replace('*', 'DISTINCT i.id', $query);
+		    }
+		    else
+		    {
+			$query = str_replace('i.*', 'DISTINCT i.*', $query);
+		    }
 		    $pos = strpos($query, 'WHERE');
 		    $first = substr($query, 0 , $pos);
 		    $second = substr($query, $pos);

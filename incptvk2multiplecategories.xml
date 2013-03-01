@@ -10,7 +10,7 @@
     <version>1.0</version>
     <description></description>
 	<updateservers>
-	   <server type="extension" priority="1" name="Inceptive Multiple Categories for K2 Updates">http://extend.inceptive.gr/update/update.xml</server>
+	   <server type="extension" priority="1" name="Inceptive Multiple Categories for K2 Updates">http://extend.inceptive.gr/update/updateMultipleCategoriesForK2.xml</server>
 	</updateservers>
     <install>
 		<sql>

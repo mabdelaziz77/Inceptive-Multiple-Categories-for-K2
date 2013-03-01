@@ -1,0 +1,7 @@
+#tabIncptvMC,#k2TabIncptvMC{
+	visibility:hidden;
+}
+
+ul.simpleTabsNavigation li#tabIncptvMC a {
+    background-image: url(../media/multiple_categories.png);
+}

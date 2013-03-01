@@ -7,4 +7,4 @@
 -- license GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
 --
  
--- DROP TABLE IF EXISTS `#__k2_multiple_categories`;
+DROP TABLE IF EXISTS `#__k2_multiple_categories`;

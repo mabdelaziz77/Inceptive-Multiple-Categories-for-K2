@@ -185,6 +185,9 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 			array_push($selectedCategories, $retrievedCategory->catID);
 		}
 	    }
+		
+		if(empty($selectedCategories))
+		array_push($selectedCategories, 0);
 	    
 	    $document 		= &JFactory::getDocument();
 	    $path 		= str_replace("administrator/", "",JURI::base());

@@ -129,7 +129,7 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 	$request_params		= JRequest::getVar('plugins', array());
 	$fields = (!empty($request_params['incptvk2multiplecategories'])) ? $request_params['incptvk2multiplecategories']: array();
 	array_push($fields, $item->catid) ;
-	$fields = array_unique($fields);
+	$fields = array_diff(array_unique($fields), array('0'));
 	
 	/* Checking if the no categories were changed */
 	$selectedCategories = array();
@@ -198,8 +198,7 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 	    $lang->load("plg_k2_incptvk2multiplecategories", $languagePath, null, false);
 
 	    $categoriesModel = K2Model::getInstance('Categories', 'K2Model');
-	    
-	    $categories_option = array();
+	    $categories_option[] = JHTML::_('select.option', 0, JText::_('K2_SELECT_CATEGORY'));
 	    $categories = $categoriesModel->categoriesTree(NUll, true, false);
 	    if ($mainframe->isSite())
 	    {

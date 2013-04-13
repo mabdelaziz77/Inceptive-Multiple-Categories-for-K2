@@ -39,6 +39,8 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 	
 	if($mainframe->isAdmin())
 	{
+		$query = str_replace('i.*', 'DISTINCT i.*', $query);
+		
 	    //Filtering K2 items by K2 category
 	    if(strpos($query, 'AND i.catid'))
 	    {

@@ -173,14 +173,14 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
     
     function onRenderAdminForm (&$item, $type, $tab='') {
 	if ($tab == 'other' && $type == 'item') {
-	    $mainframe 		= &JFactory::getApplication();
+	    $mainframe 		= JFactory::getApplication();
 	    
 	    $selectedCategories = array();
 	    
 	    if($item->id != 0)
 	    {
-		$db 			= &JFactory::getDBO();
-		$rows 			= &JTable::getInstance('IncptvK2MultipleCategories', 'Table');
+		$db 			= JFactory::getDBO();
+		$rows 			= JTable::getInstance('IncptvK2MultipleCategories', 'Table');
 		$retrievedCategories  = $rows->getSomeObjectsList('SELECT * FROM #__k2_multiple_categories mc WHERE mc.itemID = '.$item->id);
 		foreach ($retrievedCategories as $retrievedCategory) { 
 		    if($retrievedCategory->catID != $item->catid)
@@ -191,7 +191,7 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 		if(empty($selectedCategories))
 		array_push($selectedCategories, 0);
 	    
-	    $document 		= &JFactory::getDocument();
+	    $document 		= JFactory::getDocument();
 	    $path 		= str_replace("administrator/", "",JURI::base());
 	    $plugin_folder 	= basename(dirname(__FILE__));
 	    $document->addScript($path.'plugins/k2/'.$plugin_folder.'/js/incptvk2multiplecategories.js');

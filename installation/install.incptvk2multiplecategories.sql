@@ -1,5 +1,5 @@
 --
--- version 1.0.0
+-- version 1.1
 -- package Inceptive Mutliple Categories for K2
 -- author Inceptive Design Labs <info@inceptive.gr>
 -- link http://www.inceptive.gr

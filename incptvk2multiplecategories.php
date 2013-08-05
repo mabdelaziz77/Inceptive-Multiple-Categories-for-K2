@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		1.0
+ * @version		1.1
  * @package		Inceptive Mutliple Categories for K2
  * @author		Inceptive Design Labs - http://www.inceptive.gr
  * @copyright	Copyright (c) 2006 - 2012 Inceptive GP. All rights reserved.
@@ -23,8 +23,8 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
     // K2 human readable plugin name. This the title of the plugin users see in K2 form.
     var $pluginNameHumanReadable = 'Inceptive Multiple Categories for K2';
     
-    var $plg_copyrights_start		= "\n\n<!-- Inceptive Multiple Categories for K2 Plugin (v1.0) starts here -->\n";
-    var $plg_copyrights_end		= "\n<!-- Inceptive Multiple Categories for K2 Plugin (v1.0) ends here -->\n\n";
+    var $plg_copyrights_start		= "\n\n<!-- Inceptive Multiple Categories for K2 Plugin (v1.1) starts here -->\n";
+    var $plg_copyrights_end		= "\n<!-- Inceptive Multiple Categories for K2 Plugin (v1.1) ends here -->\n\n";
 
     // Constructor
     public function __construct(&$subject, $config)
@@ -72,7 +72,7 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 	    $layout= JRequest::getCmd('layout');
 
 	    //Presenting one category
-	    if($task=='category' && $view=='itemlist')
+	    if(($task=='category' && $view=='itemlist') || ($task=='user' && $view=='itemlist'))
 	    {
 		if(strpos($query, 'AND c.id'))
 		{

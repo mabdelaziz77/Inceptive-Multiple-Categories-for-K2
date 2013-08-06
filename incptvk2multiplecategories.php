@@ -72,7 +72,7 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 	    $layout= JRequest::getCmd('layout');
 
 	    //Presenting one category
-	    if(($task=='category' && $view=='itemlist') || ($task=='user' && $view=='itemlist'))
+	    if(($task=='category' && $view=='itemlist') || ($task=='user' && $view=='itemlist') || ($layout=='category' && $view=='itemlist' && $task == ""))
 	    {
 		if(strpos($query, 'AND c.id'))
 		{

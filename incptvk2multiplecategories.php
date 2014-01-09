@@ -38,8 +38,22 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 	$mainframe = JFactory::getApplication();
 	
 	if($mainframe->isAdmin())
-	{
-		$query = str_replace('i.*', 'DISTINCT i.*', $query);
+	{   
+            $view= JRequest::getCmd('view');
+            if($view == "items")
+            {
+                $isCount = strpos($query, 'COUNT');
+                if($isCount == 0)
+                {
+                    $queryAddition = " ,(SELECT GROUP_CONCAT(c.name) 
+                                        FROM lpto3_k2_multiple_categories as mc
+                                        LEFT JOIN lpto3_k2_categories as c on c.id = mc.catID
+                                        WHERE mc.itemID = i.id AND mc.catID != i.catid) as mcnames ";
+                    $query = substr_replace($query, $queryAddition, strpos($query, "FROM")).substr($query, strpos($query, "FROM"));
+                }
+            }            
+            
+            $query = str_replace('i.*', 'DISTINCT i.*', $query);
 		
 	    //Filtering K2 items by K2 category
 	    if(strpos($query, 'AND i.catid'))
@@ -247,5 +261,13 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 	    
 	    echo $tabIncptvMC.$tabIncptvMC_content;
     }
+    }
+    
+    public function onK2BeforeAssignColumns(&$columns)
+    {
+        $lang = JFactory::getLanguage();
+        $languagePath = JPATH_PLUGINS.DS.'k2'.DS.'incptvk2multiplecategories';
+        $lang->load("plg_k2_incptvk2multiplecategories", $languagePath, null, false);
+        $columns = array( (object) array('label'=>JText::_('PLG_K2_MC_ADDITIONAL_CATEGORIES_LABEL'),'property'=>'mcnames', 'class'=>''));
     }
 }

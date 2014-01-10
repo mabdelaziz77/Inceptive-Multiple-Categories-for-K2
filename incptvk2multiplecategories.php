@@ -46,8 +46,8 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
                 if($isCount == 0)
                 {
                     $queryAddition = " ,(SELECT GROUP_CONCAT(c.name) 
-                                        FROM lpto3_k2_multiple_categories as mc
-                                        LEFT JOIN lpto3_k2_categories as c on c.id = mc.catID
+                                        FROM #__k2_multiple_categories as mc
+                                        LEFT JOIN #__k2_categories as c on c.id = mc.catID
                                         WHERE mc.itemID = i.id AND mc.catID != i.catid) as mcnames ";
                     $query = substr_replace($query, $queryAddition, strpos($query, "FROM")).substr($query, strpos($query, "FROM"));
                 }

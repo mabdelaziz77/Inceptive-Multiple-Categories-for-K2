@@ -93,7 +93,7 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 		    $isCount = strpos($query, 'COUNT');
 		    if($isCount != 0)
 		    {
-			$query = str_replace('*', 'DISTINCT i.id', $query);
+			$query = str_replace('COUNT(*)', 'COUNT(DISTINCT i.id)', $query);
 		    }
 		    else
 		    {
@@ -117,7 +117,7 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 		    $isCount = strpos($query, 'COUNT');
 		    if($isCount != 0)
 		    {
-			$query = str_replace('*', 'DISTINCT i.id', $query);
+			$query = str_replace('COUNT(*)', 'COUNT(DISTINCT i.id)', $query);
 		    }
 		    else
 		    {

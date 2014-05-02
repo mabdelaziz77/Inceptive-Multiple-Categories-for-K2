@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="2.5" type="plugin" group="finder" method="upgrade">
     <name>Inceptive Multiple Categories for K2 (finder plugin)</name>
-    <author>Inceptive Design Labs</author>
-    <authorEmail>info@inceptive.gr</authorEmail>
-    <authorUrl>www.inceptive.gr</authorUrl>
-    <copyright>Copyright (c) 2006-2012 Inceptive GP. All rights reserved.</copyright>
-    <creationDate>December 12, 2012</creationDate>
-    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
-    <version>1.1</version>
+    <author>Extend by Inceptive Design Labs</author>
+    <authorEmail>inceptive@inceptive.gr</authorEmail>
+    <authorUrl>http://extend.inceptive.gr</authorUrl>
+    <copyright>Copyright (c) 2014 Inceptive Design Labs. All rights reserved.</copyright>
+    <creationDate>May, 2014</creationDate>
+    <license>GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html</license>
+    <version>1.2</version>
     <description>Inceptive Multiple Categories for K2 (finder plugin)</description>
     <files>
         <file plugin="incptvk2multiplecategories">incptvk2multiplecategories.php</file>

@@ -25,7 +25,7 @@ class plgSystemIncptvk2multiplecategories extends JPlugin
 
 	if(JRequest::getCMD('option') == 'com_k2' && JRequest::getCMD('view')  == 'itemlist'  && JRequest::getCMD('task')=='category' && !$mainframe->isAdmin())
 	{
-	       JLoader::import( 'itemlist', JPATH_PLUGINS . DS . 'k2' . DS . 'incptvk2multiplecategories' . DS . 'models' );			
+	       @JLoader::import( 'itemlist', JPATH_PLUGINS . DS . 'k2' . DS . 'incptvk2multiplecategories' . DS . 'models' );			
 	}
 	
 	if ($mainframe->isAdmin())

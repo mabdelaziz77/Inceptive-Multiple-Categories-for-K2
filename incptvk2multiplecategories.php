@@ -76,6 +76,8 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 
 		$query = $first.$queryAddition.str_replace("AND catid", "AND mc.catID", $second);
 	    }
+		
+		$query = str_replace("ORDER BY i.catid","ORDER BY mc.catid",$query);
 	}
 	
 	if ($mainframe->isSite())
@@ -131,6 +133,7 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 		    $query = $first.$queryAddition.str_replace("AND i.catid", "AND mc.catID", $second);
 		}
 	    }
+		$query = str_replace("c.ordering,", '', $query);
 	}
 	return;
     }	

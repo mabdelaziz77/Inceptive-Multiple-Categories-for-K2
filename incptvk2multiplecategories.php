@@ -223,6 +223,7 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 	    $categories = $categoriesModel->categoriesTree(NUll, true, false);
 	    if ($mainframe->isSite())
 	    {
+		$task = JRequest::getCmd('task');
 		JLoader::register('K2HelperPermissions', JPATH_SITE.DS.'components'.DS.'com_k2'.DS.'helpers'.DS.'permissions.php');
 		if (isset($task) && ($task == 'add' || $task == 'edit') && !K2HelperPermissions::canAddToAll())
 		{

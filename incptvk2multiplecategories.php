@@ -237,7 +237,6 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 			{
 			    $categories[$i]->disable = true;
 			}
-			print_r($categories[$i]);
 		    }
 		}
 	    }

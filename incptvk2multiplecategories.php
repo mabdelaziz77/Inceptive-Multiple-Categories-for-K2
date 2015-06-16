@@ -43,11 +43,13 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
             {
                 $isCount = strpos($query, 'COUNT');
                 if($isCount == 0)
-                {
-                    $queryAddition = " ,(SELECT GROUP_CONCAT(c.name) 
-                                        FROM #__k2_multiple_categories as mc
-                                        LEFT JOIN #__k2_categories as c on c.id = mc.catID
-                                        WHERE mc.itemID = i.id AND mc.catID != i.catid) as mcnames ";
+                {										
+					$queryAddition = " ADDITIONAL_CATEGORIES_TAG_TO_BE_REPLACED ";
+					// $queryAddition = " ,(SELECT GROUP_CONCAT(ca.name)
+										// FROM #__k2_multiple_categories as mci 
+										// LEFT JOIN #__k2_categories as ca on ca.id = mci.catID
+										// WHERE mci.itemID = i.id AND mci.catID != i.catid) as mcnames ";
+										
                     $query = substr_replace($query, $queryAddition, strpos($query, "FROM")).substr($query, strpos($query, "FROM"));
                 }
             }            
@@ -78,6 +80,14 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 	    }
 		
 		$query = str_replace("ORDER BY i.catid","ORDER BY mc.catid",$query);
+		
+		
+		$queryAddition = ",(SELECT GROUP_CONCAT(ca.name)
+							FROM #__k2_multiple_categories as mci 
+							LEFT JOIN #__k2_categories as ca on ca.id = mci.catID
+							WHERE mci.itemID = i.id AND mci.catID != i.catid) as mcnames";
+							
+		$query = str_replace("ADDITIONAL_CATEGORIES_TAG_TO_BE_REPLACED",$queryAddition,$query);
 	}
 	
 	if ($mainframe->isSite())

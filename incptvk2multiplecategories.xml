@@ -9,9 +9,9 @@
     <license>GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html</license>
     <version>1.2</version>
     <description></description>
-	<updateservers>
+	<!-- <updateservers>
 	   <server type="extension" priority="1" name="Inceptive Multiple Categories for K2 Updates">http://extend.inceptive.gr/update/updateMultipleCategoriesForK2.xml</server>
-	</updateservers>
+	</updateservers> -->
     <install>
 		<sql>
 			<file driver="mysql" charset="utf8">installation/install.incptvk2multiplecategories.sql</file>

@@ -4,10 +4,10 @@
     <author>Extend by Inceptive Design Labs</author>
     <authorEmail>inceptive@inceptive.gr</authorEmail>
     <authorUrl>http://extend.inceptive.gr</authorUrl>
-    <copyright>Copyright (c) 2014 Inceptive Design Labs. All rights reserved.</copyright>
-    <creationDate>May, 2014</creationDate>
+    <copyright>Copyright (c) 2016 Inceptive Design Labs. All rights reserved.</copyright>
+    <creationDate>May, 2016</creationDate>
     <license>GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html</license>
-    <version>1.2</version>
+    <version>1.3</version>
     <description></description>
 	<!-- <updateservers>
 	   <server type="extension" priority="1" name="Inceptive Multiple Categories for K2 Updates">http://extend.inceptive.gr/update/updateMultipleCategoriesForK2.xml</server>

@@ -2,7 +2,7 @@
 /**
  * @package		Inceptive Multiple Categories for K2
  * @author		Inceptive Design Labs - http://www.inceptive.gr
- * @copyright	Copyright (c) 2014 Inceptive Design Labs. All rights reserved.
+ * @copyright	Copyright (c) 2016 Inceptive Design Labs. All rights reserved.
  * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 
@@ -265,11 +265,22 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 	    $tabIncptvMC_innerHtml .= JHTML::_('select.genericlist', $categories_options, 'plugins[incptvk2multiplecategories][]', 'style="width:100%;" multiple="multiple" size="10"', 'value', 'text', $selectedCategories);
 	    $tabIncptvMC_innerHtml .= '</td></tr>';	    
 	    $tabIncptvMC_innerHtml .='</tbody></table>';
+		
+		$tabIncptvMC_innerHtmlK2ge27 = '<div class="itemAdditionalField">';
+		$tabIncptvMC_innerHtmlK2ge27 .= '<div class="k2FLeft k2Right itemAdditionalValue">';
+		$tabIncptvMC_innerHtmlK2ge27 .= '<label>'.JText::_('PLG_K2_MC_ADDITIONAL_CATEGORIES_LABEL').'</label>';
+		$tabIncptvMC_innerHtmlK2ge27 .= '</div>';
+
+		$tabIncptvMC_innerHtmlK2ge27 .= '<div class="itemAdditionalData">';
+		$tabIncptvMC_innerHtmlK2ge27 .= JHTML::_('select.genericlist', $categories_options, 'plugins[incptvk2multiplecategories][]', 'style="width:100%;" multiple="multiple" size="10"', 'value', 'text', $selectedCategories);
+		$tabIncptvMC_innerHtmlK2ge27 .= '</div>';
+		$tabIncptvMC_innerHtmlK2ge27 .= '</div>';
 	    
 	    $tabIncptvMC	=   '<li id="tabIncptvMC">
-					<a href="#k2TabIncptvMC">'.JText::_('PLG_K2_MC_MULTIPLE_CATEGORIES_LABEL').'</a>
+					<a href="#k2TabIncptvMC" id="tabIncptvMCold">'.JText::_('PLG_K2_MC_MULTIPLE_CATEGORIES_LABEL').'</a>
+					<a href="#k2TabIncptvMC" id="tabIncptvMCK2ge27"><i class="fa fa-clone" aria-hidden="true"></i> '.JText::_('PLG_K2_MC_MULTIPLE_CATEGORIES_LABEL').'</a>
 				    </li>';
-	    $tabIncptvMC_content  = '<div id="k2TabIncptvMC" class="simpleTabsContent" >'.$tabIncptvMC_innerHtml.'</div>';
+	    $tabIncptvMC_content  = '<div id="k2TabIncptvMC" class="simpleTabsContent k2TabsContent k2TabsContentLower" >' . $tabIncptvMC_innerHtml . $tabIncptvMC_innerHtmlK2ge27 . '</div>';
 	    
 	    echo $tabIncptvMC.$tabIncptvMC_content;
     }

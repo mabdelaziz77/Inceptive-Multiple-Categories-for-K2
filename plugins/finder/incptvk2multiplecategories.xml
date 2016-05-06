@@ -4,10 +4,10 @@
     <author>Extend by Inceptive Design Labs</author>
     <authorEmail>inceptive@inceptive.gr</authorEmail>
     <authorUrl>http://extend.inceptive.gr</authorUrl>
-    <copyright>Copyright (c) 2014 Inceptive Design Labs. All rights reserved.</copyright>
-    <creationDate>May, 2014</creationDate>
+    <copyright>Copyright (c) 2016 Inceptive Design Labs. All rights reserved.</copyright>
+    <creationDate>May, 2016</creationDate>
     <license>GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html</license>
-    <version>1.2</version>
+    <version>1.3</version>
     <description>Inceptive Multiple Categories for K2 (finder plugin)</description>
     <files>
         <file plugin="incptvk2multiplecategories">incptvk2multiplecategories.php</file>

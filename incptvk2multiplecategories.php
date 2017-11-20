@@ -79,7 +79,7 @@ class plgK2Incptvk2multiplecategories extends K2Plugin
 		$query = $first.$queryAddition.str_replace("AND catid", "AND mc.catID", $second);
 	    }
 		
-		$query = str_replace("ORDER BY i.catid","ORDER BY mc.catid",$query);
+		$query = str_replace("ORDER BY i.catID","ORDER BY mc.catID",$query);
 		
 		
 		$queryAddition = ",(SELECT GROUP_CONCAT(ca.name)
